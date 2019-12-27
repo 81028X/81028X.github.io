@@ -25,6 +25,8 @@ body {
 }
 
 #backstretch h1{
+    font-size: 3rem;
+    font-weight: bold;
     position: absolute;
     left:50%;
     top:50%;
