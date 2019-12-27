@@ -1,6 +1,10 @@
 /* *{
     background-color: #00000011;
 } */
+.align-center{
+  text-align: center;
+}
+
 .preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -44,4 +48,18 @@ body {
 
 nav {
   transition: 0.2s ease-in-out;
+}
+
+.small-images img{
+  margin: 20% 20% 0% 20%;
+  width:60%;
+}
+
+.card-counter{
+  text-align: center;
+}
+
+.counter{
+  color: #355BEA;
+  font-weight: bold;
 }
