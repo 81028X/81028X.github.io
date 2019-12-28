@@ -1,3 +1,4 @@
+
 function autoAdjustBackstretch(){
   if ($("#backstretch-img")[0].width / $("#backstretch-img")[0].height < $(window).width() / $(window).height()) {
     $("#backstretch-img").css({
@@ -13,7 +14,9 @@ function autoAdjustBackstretch(){
 }
 
 
+
 $(document).ready(function() {
+  // $("#nav-placeholder").load("nav.html");
   autoAdjustBackstretch();
   $("body").removeClass("preload");
   $(window).scroll(function() {
