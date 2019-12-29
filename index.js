@@ -16,11 +16,12 @@ function autoAdjustBackstretch(){
 
 
 $(document).ready(function() {
-  // $("#nav-placeholder").load("nav.html");
-  autoAdjustBackstretch();
   $("body").removeClass("preload");
+  $("#nav-placeholder").load("./nav.html");
+  $("#footer-placeholder").load("./footer.html");
+  // autoAdjustBackstretch();
   $(window).scroll(function() {
-    if ($(window).scrollTop() > 300) {
+    if ($(window).scrollTop() >100) {
       $("nav").addClass("bg-light");
       $("nav").addClass("navbar-light");
       $("nav").removeClass("navbar-dark");
@@ -32,6 +33,7 @@ $(document).ready(function() {
   });
 
   $(window).resize(function() {
-    autoAdjustBackstretch();
+    // autoAdjustBackstretch();
   });
+
 });
