@@ -1,7 +1,7 @@
 /* *{
     background-color: #00000011;
 } */
-@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway:400,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway:400,600,900&display=swap');
 
 .align-center {
   text-align: center;
@@ -117,6 +117,57 @@ nav {
 
 h1 button{
   font-size: 50% !important;
+}
+
+h3.sub-title{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.card-title{
+  font-weight: 600;
+}
+
+/* when card decks expand out */
+@media (min-width: 576px){
+  .card-deck-deck{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+
+.card-deck-deck .card-deck{
+  -ms-flex: 1 0 0%;
+  flex: 1 0 0%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0%;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.card-deck {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.card-deck .card {
+  -ms-flex: 1 0 0%;
+  flex: 1 0 0%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0%;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-left: 15px;
 }
 
 /* mobile only */
