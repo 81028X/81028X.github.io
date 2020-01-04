@@ -27,7 +27,7 @@ body {
 }
 
 #backstretch {
-  background: url("/img/backstretch.webp");
+  background: url("/img/backstretch.jpg");
   text-align: center;
   background-size: cover;
   background-position: center center;
@@ -85,7 +85,7 @@ nav {
   padding: 10% 0;
   min-height: 25vw;
   height: 20%;
-  background: url("/img/members_background.webp");
+  background: url("/img/members_background.jpg");
   text-align: center;
   background-size: cover;
   background-position: center center;
