@@ -61,8 +61,8 @@ nav {
 }
 
 .small-images img {
-  margin: 10% 0;
-  width: 70%;
+  margin: 20% 0;
+  width: 50%;
   max-width: 50vw;
   position: relative;
   left: 50%;
@@ -116,10 +116,12 @@ nav {
 }
 
 h1 button{
-  font-size: 50% !important;
+  font-size: 2rem !important;
 }
 
 h3.sub-title{
+  margin-top:4rem;
+  margin-bottom:1rem;
   font-size: 2rem;
   font-weight: 600;
 }
