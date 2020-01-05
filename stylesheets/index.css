@@ -81,6 +81,7 @@ nav {
 
 .card{
   box-shadow: 0em 0.5em 0.5em 0.25em rgba(0,0,0,0.15);
+  min-height: 30vh;
 }
 
 .card-counter {
