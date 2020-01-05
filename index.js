@@ -1,4 +1,9 @@
 
+const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+
+
+
 function autoAdjustBackstretch() {
   if ($("#backstretch-img")[0].width / $("#backstretch-img")[0].height < $(window).width() / $(window).height()) {
     $("#backstretch-img").css({
