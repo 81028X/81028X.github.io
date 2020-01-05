@@ -30,8 +30,12 @@ body {
   -o-background-size: cover;
 }
 
+.fullrez #backstretch{
+  background-image: url("/img/backstretch_full.jpg"), url("/img/backstretch_1080.jpg"), url("/img/backstretch_405.jpg");
+}
+
 #backstretch {
-  background: url("/img/backstretch.jpg");
+  background-image: url("/img/backstretch_1080.jpg"), url("/img/backstretch_405.jpg");
   text-align: center;
   background-size: cover;
   background-position: center center;

@@ -13,9 +13,11 @@ function autoAdjustBackstretch() {
   }
 }
 
-
-
 $(document).ready(function () {
+  if(window.screen.width>1920||window.screen.height>1920){
+    $("body").addClass("fullrez");
+  }
+
   $("body").removeClass("preload");
   $("#nav-placeholder").load("./nav.html");
   $("#footer-placeholder").load("./footer.html");
@@ -31,11 +33,6 @@ $(document).ready(function () {
       $("nav").removeClass("navbar-light");
     }
   });
-
-  $(window).resize(function () {
-    // autoAdjustBackstretch();
-  });
-
 });
 
 function scrollToID(targetID) {
