@@ -55,7 +55,9 @@ function checkBrowser() {
   // }
 
   console.log(isMobile)
-  $("body").addClass("Mobile");
+  if(isMobile){
+    $("body").addClass("Mobile");
+  }
   // if (browser != "Chrome" || isMobile) {
   //   if (confirm("This website is designed for Chrome on Desktop, some functions will not work on your current browser/device. Press OK to never see this message again.")) {
   //     localStorage.setItem('alerted', 'yes');
