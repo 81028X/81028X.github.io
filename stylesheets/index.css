@@ -297,21 +297,21 @@ h3.sub-title {
 }
 .masonryImage-sizer,
 .masonryImage{
-  width: calc(33% - 10px)
+  width: calc(33% - 5px)
 }
 
 .masonryImage.wide{
-  width: 66%;
+  width: calc(66% - 5px)
 }
 
 .masonryImage {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .masonryImageContainer img{
   border-radius: calc(.25rem - 1px);
   /* width: 33%; */
   display: block;
-  width: 90%;
-  margin: 1em
+  width: calc(100% - 1em);
+  margin: 0.5em;
 }

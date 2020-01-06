@@ -3,7 +3,7 @@ var $masonryImageContainer = $('.masonryImageContainer').masonry({
   itemSelector : '.masonryImage',
   percentPosition: true,
   columnWidth: '.masonryImage-sizer',
-  gutter: 10
+  gutter: 5
 });
 
 const observer = lozad('.lozad', {
