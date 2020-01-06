@@ -1,5 +1,25 @@
 
-const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+var $masonryImageContainer = $('.masonryImageContainer').masonry({
+  itemSelector : '.masonryImage',
+  percentPosition: true,
+  columnWidth: '.masonryImage-sizer',
+  gutter: 10
+});
+
+const observer = lozad('.lozad', {
+  load: function(el) {
+      el.src = el.getAttribute('data-src');
+      el.classList.add("loaded");
+      
+      if(el.classList.contains("masonry")){
+        $('.masonryImageContainer').imagesLoaded().progress( function() {
+          $masonryImageContainer.masonry();
+        });
+      }
+      // Custom implementation to load an element
+      // e.g. el.src = el.getAttribute('data-src');
+  }
+});
 observer.observe();
 
 function checkBrowser() {
@@ -32,19 +52,15 @@ function checkBrowser() {
       if (confirm("This website is designed for Chrome on Desktop, some functions will not work on your current browser/device. Press OK to never see this message again.")) {
         localStorage.setItem('alerted', 'yes');
       }
-    }else{
+    } else {
       localStorage.setItem('alerted', 'yes');
     }
   }
 }
 
+
 $(document).ready(function () {
   // checkBrowser();
-
-  if (window.screen.width > 1920 || window.screen.height > 1920) {
-    $("body").addClass("fullrez");
-  }
-
   $("body").removeClass("preload");
   $("#nav-placeholder").load("./nav.html");
   $("#footer-placeholder").load("./footer.html");
