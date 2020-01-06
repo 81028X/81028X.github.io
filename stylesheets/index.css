@@ -295,6 +295,7 @@ h3.sub-title {
     opacity: 1;
   }
 }
+
 .masonryImage-sizer,
 .masonryImage{
   width: calc(33% - 5px)
@@ -302,6 +303,31 @@ h3.sub-title {
 
 .masonryImage.wide{
   width: calc(66% - 5px)
+}
+
+@media (max-width: 768px) {
+  .masonryImage-sizer,
+  .masonryImage{
+    width: calc(50% - 5px)
+  }
+  
+  .masonryImage.wide{
+    width: calc(50% - 5px)
+  }
+}
+
+@media (max-width: 576px) {
+  .masonryImage-sizer,
+  .masonryImage{
+    width: 100%
+  }
+  
+  .masonryImage.wide{
+    width: 100%
+  }
+  .masonryImageContainer img{
+    width: calc(100%);
+  }
 }
 
 .masonryImage {

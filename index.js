@@ -1,23 +1,23 @@
 
 var $masonryImageContainer = $('.masonryImageContainer').masonry({
-  itemSelector : '.masonryImage',
+  itemSelector: '.masonryImage',
   percentPosition: true,
   columnWidth: '.masonryImage-sizer',
   gutter: 5
 });
 
 const observer = lozad('.lozad', {
-  load: function(el) {
-      el.src = el.getAttribute('data-src');
-      el.classList.add("loaded");
-      
-      if(el.classList.contains("masonry")){
-        $('.masonryImageContainer').imagesLoaded().progress( function() {
-          $masonryImageContainer.masonry();
-        });
-      }
-      // Custom implementation to load an element
-      // e.g. el.src = el.getAttribute('data-src');
+  load: function (el) {
+    el.src = el.getAttribute('data-src');
+    el.classList.add("loaded");
+
+    if (el.classList.contains("masonry")) {
+      $('.masonryImageContainer').imagesLoaded().progress(function () {
+        $masonryImageContainer.masonry();
+      });
+    }
+    // Custom implementation to load an element
+    // e.g. el.src = el.getAttribute('data-src');
   }
 });
 observer.observe();
@@ -61,9 +61,11 @@ function checkBrowser() {
 
 $(document).ready(function () {
   // checkBrowser();
+
   $("body").removeClass("preload");
   $("#nav-placeholder").load("./nav.html");
   $("#footer-placeholder").load("./footer.html");
+
   $(window).scroll(function () {
     if ($(window).scrollTop() > 50) {
       $("nav").addClass("bg-light");
