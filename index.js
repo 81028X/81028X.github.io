@@ -39,7 +39,7 @@ function checkBrowser() {
 }
 
 $(document).ready(function () {
-  checkBrowser();
+  // checkBrowser();
 
   if (window.screen.width > 1920 || window.screen.height > 1920) {
     $("body").addClass("fullrez");
