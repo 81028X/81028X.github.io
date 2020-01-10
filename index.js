@@ -45,12 +45,15 @@ function checkBrowser() {
   {
     browser = "IE";
   }
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     // some code..
     isMobile = true;
     $("body").addClass("Mobile");
-   }
-   console.log(isMobile)
+  } else {
+    isMobile = false;
+    $("body").addClass("PC");
+  }
+  console.log(isMobile)
 
 
   // device detection
@@ -76,6 +79,16 @@ $(document).ready(function () {
   $("#nav-placeholder").load("./nav.html");
   $("#footer-placeholder").load("./footer.html");
 
+  if ($(window).scrollTop() > 50) {
+    $("nav").addClass("bg-light");
+    $("nav").addClass("navbar-light");
+    $("nav").removeClass("navbar-dark");
+  } else {
+    $("nav").removeClass("bg-light");
+    $("nav").addClass("navbar-dark");
+    $("nav").removeClass("navbar-light");
+  }
+
   $(window).scroll(function () {
     if ($(window).scrollTop() > 50) {
       $("nav").addClass("bg-light");
@@ -88,6 +101,16 @@ $(document).ready(function () {
     }
   });
 });
+
+function showMemberList(){
+  $("#membersDropdown").addClass("show");
+  $($("#membersDropdown").children()[0]).attr("aria-expanded", true)
+  $($("#membersDropdown").children()[1]).addClass("show");
+  $($("#membersDropdown").children()[1]).addClass("borderFlashing");
+  setTimeout(function() { 
+    $($("#membersDropdown").children()[1]).removeClass("borderFlashing");
+  }, 900);
+}
 
 function scrollToID(targetID) {
   console.log("scrolling to " + targetID);
