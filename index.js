@@ -1,8 +1,8 @@
 
-var $masonryImageContainer = $('.masonryImageContainer').masonry({
-  itemSelector: '.masonryImage',
+var $masonryItemContainer = $('.masonryItemContainer').masonry({
+  itemSelector: '.masonryItem',
   percentPosition: true,
-  columnWidth: '.masonryImage-sizer',
+  columnWidth: '.masonryItem-sizer',
   gutter: 5
 });
 
@@ -12,8 +12,8 @@ const observer = lozad('.lozad', {
     el.classList.add("loaded");
 
     if (el.classList.contains("masonry")) {
-      $('.masonryImageContainer').imagesLoaded().progress(function () {
-        $masonryImageContainer.masonry();
+      $('.masonryItemContainer').imagesLoaded().progress(function () {
+        $masonryItemContainer.masonry();
       });
     }
     // Custom implementation to load an element

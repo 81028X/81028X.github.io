@@ -108,7 +108,7 @@ nav {
   transition: 0.5s ease-in-out;
 }
 
-.card, .masonryImage img {
+.card, .masonryItem img {
   box-shadow: 0em 0.5em 0.5em 0.25em rgba(0, 0, 0, 0.15);
 }
 
@@ -294,45 +294,65 @@ h3.sub-title {
   }
 }
 
-.masonryImage-sizer, .masonryImage {
+.masonryItem-sizer, .masonryItem {
   width: calc(33% - 5px)
 }
 
-.masonryImage.wide {
+.masonryItem.wide {
   width: calc(66% - 5px)
 }
 
 @media (max-width: 768px) {
-  .masonryImage-sizer, .masonryImage {
+  .masonryItem-sizer, .masonryItem {
     width: calc(50% - 5px)
   }
-  .masonryImage.wide {
+  .masonryItem.wide {
     width: calc(50% - 5px)
   }
 }
 
 @media (max-width: 576px) {
-  .masonryImage-sizer, .masonryImage {
+  .masonryItem-sizer, .masonryItem {
     width: 100%
   }
-  .masonryImage.wide {
+  .masonryItem.wide {
     width: 100%
   }
-  .masonryImageContainer img {
+  .masonryItemContainer img {
     width: calc(100%);
   }
 }
 
-.masonryImage {
+.masonryItem {
   margin-bottom: 5px;
 }
 
-.masonryImageContainer img {
+.masonryItemContainer .masonry {
   border-radius: calc(.25rem - 1px);
   /* width: 33%; */
   display: block;
   width: calc(100% - 1em);
   margin: 0.5em;
+  transition:transform 0.25s ease-out;
+}
+
+.masonryItemContainer .masonry:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.masonryItemContainer .masonry:active {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.masonryItem:hover{
+  z-index: 1000;
+}
+
+
+.masonryItem:active{
+  z-index: 100000;
 }
 
 .blurry.vex {
