@@ -126,7 +126,7 @@ $(".youtubeEmbed").on('mouseenter mouseleave', function (e) {
             scrollTop: $(".youtubeEmbedContainer.row").offset().top - window.innerHeight * 0.05
           });
           setTimeout(function () {
-            if (youtubeEmbedMouseOver) {
+            if (youtubeEmbedMouseOver && youtubeEmbedStage==1) {
               youtubeEmbedStage = 2;
               $(".youtubeEmbedContainer.row").css("transition", "0s");
               $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(-50%,0)");
