@@ -186,6 +186,7 @@ nav {
 }
 
 .jumbotron .btn {
+  margin-bottom: 0.25em;
   font-size: 150%;
 }
 
@@ -203,6 +204,14 @@ nav {
 
 .footer h6 {
   margin-bottom: 0;
+}
+
+.footer a,.footer a:visited {
+  color: #949ae9;
+}
+
+.footer a:hover {
+  color: #7c82cc;
 }
 
 h1 .btn {
@@ -295,16 +304,16 @@ h3.sub-title {
   }
 }
 
-.borderFlashing {
-  animation: 0.3s ease 0s 3 borderFlash;
+.flashing {
+  animation: 0.3s ease 0s 3 backgroundFlash;
 }
 
-@keyframes borderFlash {
+@keyframes backgroundFlash {
   0% {
     background-color:#fff;
   }
   50% {
-    background-color:#000;
+    background-color:rgb(87, 87, 87);
   }
   100% {
     background-color:#fff;

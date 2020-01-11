@@ -103,12 +103,15 @@ $(document).ready(function () {
 });
 
 function showMemberList(){
-  $("#membersDropdown").addClass("show");
-  $($("#membersDropdown").children()[0]).attr("aria-expanded", true)
-  $($("#membersDropdown").children()[1]).addClass("show");
-  $($("#membersDropdown").children()[1]).addClass("borderFlashing");
+  $("#membersDropdown").addClass("flashing");
+  // $("#membersDropdown").addClass("show");
+  // $($("#membersDropdown").children()[0]).attr("aria-expanded", true)
+  // $($("#membersDropdown").children()[1]).addClass("show");
+  // $($("#membersDropdown").children()[1]).addClass("flashing");
+  $("#navbarToggler").addClass("show");
   setTimeout(function() { 
-    $($("#membersDropdown").children()[1]).removeClass("borderFlashing");
+    $("#membersDropdown").removeClass("flashing");
+    // $($("#membersDropdown").children()[1]).removeClass("flashing");
   }, 900);
 }
 
