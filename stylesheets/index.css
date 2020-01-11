@@ -75,6 +75,31 @@ body {
   text-shadow: 0em 0em 0.2em rgba(0, 0, 0, 0.5);
 }
 
+#backstretch img {
+  animation: 0.8s ease-out 0s 1 fadeIn, 3s ease 0.8s infinite hovering;
+  text-align: center;
+  font-size: 5rem;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -100%);
+  z-index: 100;
+  text-shadow: 0em 0em 0.2em rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+@keyframes hovering{
+  0%{
+    top: 100%;
+  }
+  50%{
+    top: 98%;
+  }
+  100%{
+    top: 100%;
+  }
+}
+
 #backstretch-img {
   position: relative;
   left: 50%;
@@ -206,7 +231,7 @@ nav {
   margin-bottom: 0;
 }
 
-.footer a,.footer a:visited {
+.footer a, .footer a:visited {
   color: #949ae9;
 }
 
@@ -305,18 +330,24 @@ h3.sub-title {
 }
 
 .flashing {
-  animation: 0.3s ease 0s 3 backgroundFlash;
+  animation: 0.3s ease-in-out 0s 3 backgroundFlash;
 }
 
 @keyframes backgroundFlash {
   0% {
-    background-color:#fff;
+    background-color: #fff;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
   50% {
-    background-color:rgb(87, 87, 87);
+    background-color: rgb(87, 87, 87);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
   100% {
-    background-color:#fff;
+    background-color: #fff;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
