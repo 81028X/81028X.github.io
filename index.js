@@ -108,15 +108,17 @@ $('body')
   .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
   .on('click', '.dropdown-menu a', toggleDropdown);
 
-var youtubeEmbedMouseOver, youtubeEmbedStage = 0, youtubeEmbedScaleFactor;
+var youtubeEmbedMouseOver, youtubeEmbedStage = 0, youtubeEmbedScaleFactor, youtubeEmbedMouseOverCounter = 0;
 $(".youtubeEmbed").on('mouseenter mouseleave', function (e) {
   // console.log(youtubeEmbedStage)
   if (e.type === 'mouseenter') {
     youtubeEmbedMouseOver = true;
     if ($(70).toPx().substring(0, ($(70).toPx().length - 2)) > window.innerWidth || window.innerWidth * 0.5625 <= window.innerHeight) return;//only zooms in on 70em+
     if (youtubeEmbedMouseOver && youtubeEmbedStage == 0) {
+      youtubeEmbedMouseOverCounter++;
       setTimeout(function () {
-        if (youtubeEmbedMouseOver && youtubeEmbedStage == 0) {
+        youtubeEmbedMouseOverCounter--;
+        if (youtubeEmbedMouseOver && youtubeEmbedStage == 0 && youtubeEmbedMouseOverCounter == 0) {
           youtubeEmbedStage = 1;
           $(".youtubeEmbedContainer.row").css("z-index", "100000");
           $(".youtubeEmbedContainer.row").css("transition", "0.3s ease");
