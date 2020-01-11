@@ -135,7 +135,7 @@ $(".youtubeEmbed").on('mouseenter mouseleave', function (e) {
           }, 300);
           // $(".youtubeEmbedContainer.row").addClass("enlarged")
         }
-      }, 500);
+      }, 700);
     }
   } else {
     youtubeEmbedMouseOver = false;
