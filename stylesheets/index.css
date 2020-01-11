@@ -250,6 +250,15 @@ h3.sub-title {
   font-weight: 600;
 }
 
+
+h1.sub-title {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+
 .card-title {
   font-weight: 600;
 }
@@ -439,4 +448,34 @@ h3.sub-title {
 
 .Safari .page-header {
   padding: 0;
+}
+
+.youtubeEmbedContainer.row{
+  position: relative;
+  left: 0%;
+  transform: translate(0,0);
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+.youtubeEmbedContainer.row.enlarged{
+  position: relative;
+  left: 50%;
+  /* transform: translate(-50%,0); */
+  width: calc(90vh / 0.5625);
+  padding-bottom: 90vh;
+  z-index: 100000;
+}
+
+.youtubeEmbed{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
 }

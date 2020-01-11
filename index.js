@@ -1,8 +1,3 @@
-AOS.init({
-  disable: "mobile",
-  once: true,
-  anchorPlacement: 'top-bottom'
-});
 var $masonryItemContainer = $('.masonryItemContainer').masonry({
   itemSelector: '.masonryItem',
   percentPosition: true,
@@ -25,6 +20,29 @@ const observer = lozad('.lozad', {
   }
 });
 observer.observe();
+
+$.fn.toEm = function (settings) {
+  settings = jQuery.extend({
+    scope: 'body'
+  }, settings);
+  var that = parseInt(this[0], 10),
+    scopeTest = jQuery('<div style="display: none; font-size: 1em; margin: 0; padding:0; height: auto; line-height: 1; border:0;">&nbsp;</div>').appendTo(settings.scope),
+    scopeVal = scopeTest.height();
+  scopeTest.remove();
+  return (that / scopeVal).toFixed(8) + 'em';
+};
+
+
+$.fn.toPx = function (settings) {
+  settings = jQuery.extend({
+    scope: 'body'
+  }, settings);
+  var that = parseFloat(this[0]),
+    scopeTest = jQuery('<div style="display: none; font-size: 1em; margin: 0; padding:0; height: auto; line-height: 1; border:0;">&nbsp;</div>').appendTo(settings.scope),
+    scopeVal = scopeTest.height();
+  scopeTest.remove();
+  return Math.round(that * scopeVal) + 'px';
+};
 
 function checkBrowser() {
 
@@ -75,10 +93,10 @@ function checkBrowser() {
   $("body").addClass(browser);
 }
 
-function toggleDropdown (e) {
+function toggleDropdown(e) {
   const _d = $(e.target).closest('.dropdown'),
     _m = $('.dropdown-menu', _d);
-  setTimeout(function(){
+  setTimeout(function () {
     const shouldOpen = e.type !== 'click' && _d.is(':hover');
     _m.toggleClass('show', shouldOpen);
     _d.toggleClass('show', shouldOpen);
@@ -87,9 +105,72 @@ function toggleDropdown (e) {
 }
 
 $('body')
-  .on('mouseenter mouseleave','.dropdown',toggleDropdown)
+  .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
   .on('click', '.dropdown-menu a', toggleDropdown);
 
+var youtubeEmbedMouseOver, youtubeEmbedStage = 0, youtubeEmbedScaleFactor;
+$(".youtubeEmbed").on('mouseenter mouseleave', function (e) {
+  console.log(youtubeEmbedStage)
+  if (e.type === 'mouseenter') {
+    youtubeEmbedMouseOver = true;
+    if ($(70).toPx().substring(0, ($(70).toPx().length - 2)) > window.innerWidth || window.innerWidth*0.5625 < window.innerHeight) return;//only zooms in on 70em+
+    setTimeout(function () {
+      if (youtubeEmbedMouseOver && youtubeEmbedStage==0) {
+        youtubeEmbedStage = 1;
+        $(".youtubeEmbedContainer.row").css("z-index", "100000");
+        $(".youtubeEmbedContainer.row").css("transition", "0.3s ease");
+        youtubeEmbedScaleFactor = (window.innerHeight * 0.9) / ($(".youtubeEmbedContainer.row").width() * 0.5625);
+        $(".youtubeEmbedContainer.row").css("transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
+        $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
+        $('html,body').animate({
+          scrollTop: $(".youtubeEmbedContainer.row").offset().top - window.innerHeight * 0.05
+        });
+        setTimeout(function () {
+          if (youtubeEmbedMouseOver) {
+            youtubeEmbedStage = 2;
+            $(".youtubeEmbedContainer.row").css("transition", "0s");
+            $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(-50%,0)");
+            $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(1) translate(-50%,0)");
+            $(".youtubeEmbedContainer.row").addClass("enlarged")
+          }
+        }, 300);
+        // $(".youtubeEmbedContainer.row").addClass("enlarged")
+      }
+    }, 500);
+  } else {
+    youtubeEmbedMouseOver = false;
+    setTimeout(function () {
+      if (!youtubeEmbedMouseOver && youtubeEmbedStage>0) {
+        if (youtubeEmbedStage == 1) {
+          youtubeEmbedStage = -1;
+          $(".youtubeEmbedContainer.row").css("z-index", "0");
+          $(".youtubeEmbedContainer.row").css("transition", "0.1s ease");
+          $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(0,0)");
+          $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(1) translate(0,0)");
+          setTimeout(function () {
+            youtubeEmbedStage = 0;
+          },100)
+        }
+        if (youtubeEmbedStage == 2) {
+          youtubeEmbedStage = -2;
+          $(".youtubeEmbedContainer.row").css("transition", "0");
+          $(".youtubeEmbedContainer.row").css("transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0%," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
+          $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0%," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
+          $(".youtubeEmbedContainer.row").removeClass("enlarged")
+          setTimeout(function () {
+            $(".youtubeEmbedContainer.row").css("transition", "0.3s ease");
+            $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(0,0)");
+            $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(1) translate(0,0)");
+            $(".youtubeEmbedContainer.row").css("z-index", "0");
+          }, 2);
+          setTimeout(function () {
+            youtubeEmbedStage = 0;
+          },302)
+        }
+      }
+    }, 100);
+  }
+})
 $(document).ready(function () {
   checkBrowser();
 
@@ -120,14 +201,14 @@ $(document).ready(function () {
   });
 });
 
-function showMemberList(){
+function showMemberList() {
   $("#membersDropdown").addClass("flashing");
   // $("#membersDropdown").addClass("show");
   // $($("#membersDropdown").children()[0]).attr("aria-expanded", true)
   // $($("#membersDropdown").children()[1]).addClass("show");
   // $($("#membersDropdown").children()[1]).addClass("flashing");
   $("#navbarToggler").addClass("show");
-  setTimeout(function() { 
+  setTimeout(function () {
     $("#membersDropdown").removeClass("flashing");
     // $($("#membersDropdown").children()[1]).removeClass("flashing");
   }, 900);

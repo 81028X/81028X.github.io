@@ -15,8 +15,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<link rel="stylesheet" href="/stylesheets/index.css" />
 	<!-- boot strap stuff -->
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	
+	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
@@ -49,7 +49,17 @@
 		<img onclick="scrollToID('team-description')" src="/img/down_arrow.svg" style="width: 1em; height: 1em;" />
 	</div>
 	<div id="team-description" class="container-md mt-4">
-		<div class="jumbotron" data-aos="fade-up">
+		<div class="row align-center">
+			<h1 class="col sub-title">
+				This is <span style="color: #F50016; font-weight: 900;">LeRoi</span>
+				<span style="color: #2C1F5C; font-family: Oswald;">Robotics</span>, 81208X
+			</h1>
+		</div>
+		<div class="row youtubeEmbedContainer">
+			<iframe width="560" height="315" class="youtubeEmbed" src="https://www.youtube-nocookie.com/embed/aQyLbB-Zyjg?rel=0&controls=0" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="jumbotron mt-4" >
 			<h1 class="display-4" style="font-weight:bold">Who We Are</h1>
 			<p class="lead">Team 81208X, LeRoi Robotics, is a VEX VRC team established by a couple of high
 				school students
@@ -69,7 +79,7 @@
 			<button type="button" id="memberButton" class="btn btn-primary" onclick="showMemberList()">Learn about our
 				members</button>
 		</div>
-		<div id="members-cards" class="card-deck-deck" data-aos="fade-up">
+		<div id="members-cards" class="card-deck-deck" >
 			<div class="card-deck small-images card-counter">
 				<div class="card">
 					<img data-src="img/members.jpg" class="card-img-top lozad">
@@ -109,7 +119,7 @@
 				Our team consists of students from a variety of schools.
 			</h3>
 		</div>
-		<div class="card-deck-deck" data-aos="fade-up">
+		<div class="card-deck-deck" >
 			<div class="card-deck small-images card-counter mt-3">
 				<div class="card">
 					<img data-src="img/logo-mss.png" class="card-img-top lozad">
@@ -149,7 +159,7 @@
 				</h3>
 			</div>
 			<div class="card-deck">
-				<div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+				<div class="card"  data-aos-anchor-placement="top-bottom">
 					<img data-src="img/sponser-DRROBOT.jpg" class="card-img-top lozad">
 					<div class="card-body">
 						<h5 class="card-title">Dr Robot Inc.</h5>
@@ -157,7 +167,7 @@
 						<a href="https://www.DrRobot.com" class="card-link">Website</a>
 					</div>
 				</div>
-				<div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+				<div class="card"  data-aos-anchor-placement="top-bottom">
 					<img data-src="img/sponser-DRX.jpg" class="card-img-top lozad">
 					<div class="card-body">
 						<h5 class="card-title">Dr X Academy of Robotics and Coding</h5>
@@ -167,7 +177,7 @@
 
 					</div>
 				</div>
-				<div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+				<div class="card"  data-aos-anchor-placement="top-bottom">
 					<img data-src="img/sponser-ProLaw.jpg" class="card-img-top lozad">
 					<div class="card-body">
 						<h5 class="card-title">Pro Law Accounting</h5>
