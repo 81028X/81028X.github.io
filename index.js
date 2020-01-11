@@ -110,66 +110,64 @@ $('body')
 
 var youtubeEmbedMouseOver, youtubeEmbedStage = 0, youtubeEmbedScaleFactor;
 $(".youtubeEmbed").on('mouseenter mouseleave', function (e) {
-  console.log(youtubeEmbedStage)
+  // console.log(youtubeEmbedStage)
   if (e.type === 'mouseenter') {
     youtubeEmbedMouseOver = true;
-    if ($(70).toPx().substring(0, ($(70).toPx().length - 2)) > window.innerWidth || window.innerWidth*0.5625 < window.innerHeight) return;//only zooms in on 70em+
-    setTimeout(function () {
-      if (youtubeEmbedMouseOver && youtubeEmbedStage==0) {
-        youtubeEmbedStage = 1;
-        $(".youtubeEmbedContainer.row").css("z-index", "100000");
-        $(".youtubeEmbedContainer.row").css("transition", "0.3s ease");
-        youtubeEmbedScaleFactor = (window.innerHeight * 0.9) / ($(".youtubeEmbedContainer.row").width() * 0.5625);
-        $(".youtubeEmbedContainer.row").css("transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
-        $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
-        $('html,body').animate({
-          scrollTop: $(".youtubeEmbedContainer.row").offset().top - window.innerHeight * 0.05
-        });
-        setTimeout(function () {
-          if (youtubeEmbedMouseOver) {
-            youtubeEmbedStage = 2;
-            $(".youtubeEmbedContainer.row").css("transition", "0s");
-            $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(-50%,0)");
-            $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(1) translate(-50%,0)");
-            $(".youtubeEmbedContainer.row").addClass("enlarged")
-          }
-        }, 300);
-        // $(".youtubeEmbedContainer.row").addClass("enlarged")
-      }
-    }, 500);
+    if ($(70).toPx().substring(0, ($(70).toPx().length - 2)) > window.innerWidth || window.innerWidth * 0.5625 < window.innerHeight) return;//only zooms in on 70em+
+    if (youtubeEmbedMouseOver && youtubeEmbedStage == 0) {
+      setTimeout(function () {
+        if (youtubeEmbedMouseOver && youtubeEmbedStage == 0) {
+          youtubeEmbedStage = 1;
+          $(".youtubeEmbedContainer.row").css("z-index", "100000");
+          $(".youtubeEmbedContainer.row").css("transition", "0.3s ease");
+          youtubeEmbedScaleFactor = (window.innerHeight * 0.9) / ($(".youtubeEmbedContainer.row").width() * 0.5625);
+          $(".youtubeEmbedContainer.row").css("transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
+          $('html,body').animate({
+            scrollTop: $(".youtubeEmbedContainer.row").offset().top - window.innerHeight * 0.05
+          });
+          setTimeout(function () {
+            if (youtubeEmbedMouseOver) {
+              youtubeEmbedStage = 2;
+              $(".youtubeEmbedContainer.row").css("transition", "0s");
+              $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(-50%,0)");
+              $(".youtubeEmbedContainer.row").addClass("enlarged")
+            }
+          }, 300);
+          // $(".youtubeEmbedContainer.row").addClass("enlarged")
+        }
+      }, 500);
+    }
   } else {
     youtubeEmbedMouseOver = false;
     setTimeout(function () {
-      if (!youtubeEmbedMouseOver && youtubeEmbedStage>0) {
+      if (!youtubeEmbedMouseOver && youtubeEmbedStage > 0) {
         if (youtubeEmbedStage == 1) {
           youtubeEmbedStage = -1;
           $(".youtubeEmbedContainer.row").css("z-index", "0");
           $(".youtubeEmbedContainer.row").css("transition", "0.1s ease");
           $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(0,0)");
-          $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(1) translate(0,0)");
           setTimeout(function () {
             youtubeEmbedStage = 0;
-          },100)
+          }, 100)
         }
         if (youtubeEmbedStage == 2) {
           youtubeEmbedStage = -2;
           $(".youtubeEmbedContainer.row").css("transition", "0");
           $(".youtubeEmbedContainer.row").css("transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0%," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
-          $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(" + youtubeEmbedScaleFactor + ") translate(0%," + (youtubeEmbedScaleFactor - 1) / 2 * $(".youtubeEmbedContainer.row").width() * 0.5625 / youtubeEmbedScaleFactor + "px)");
           $(".youtubeEmbedContainer.row").removeClass("enlarged")
           setTimeout(function () {
             $(".youtubeEmbedContainer.row").css("transition", "0.3s ease");
             $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(0,0)");
-            $(".youtubeEmbedContainer.row").css("-webkit-transform", "scale(1) translate(0,0)");
             $(".youtubeEmbedContainer.row").css("z-index", "0");
           }, 2);
           setTimeout(function () {
             youtubeEmbedStage = 0;
-          },302)
+          }, 302)
         }
       }
     }, 100);
   }
+  // console.log(youtubeEmbedStage)
 })
 $(document).ready(function () {
   checkBrowser();
