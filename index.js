@@ -1,4 +1,8 @@
-
+AOS.init({
+  disable: "mobile",
+  once: true,
+  anchorPlacement: 'top-bottom'
+});
 var $masonryItemContainer = $('.masonryItemContainer').masonry({
   itemSelector: '.masonryItem',
   percentPosition: true,
