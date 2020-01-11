@@ -7,6 +7,8 @@
         } else {
             if (window.location.pathname.indexOf($(this).children().attr("href")) >= 0) {
                 $(this).addClass("active");
+            }else if($(this).children().attr("href")=="index.html"&&window.location.pathname=="/"){
+                $(this).addClass("active");
             }
         }
     });
