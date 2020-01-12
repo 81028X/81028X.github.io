@@ -144,6 +144,11 @@ nav {
   height: 30vh;
 }
 
+.gallery .lozad {
+  min-height: 10vh;
+}
+
+
 .lozad {
   transition: 0.5s ease-in-out;
 }
