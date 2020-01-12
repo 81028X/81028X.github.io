@@ -137,7 +137,7 @@ nav {
   transition: 0.5s ease-in-out;
 }
 
-.card, .masonryItem img {
+.card, .masonryItem img, .youtubeEmbedContainer, .mapouter {
   box-shadow: 0em 0.5em 0.5em 0.25em rgba(0, 0, 0, 0.15);
 }
 
