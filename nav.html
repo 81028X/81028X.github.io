@@ -7,7 +7,7 @@
         } else {
             if (window.location.pathname.indexOf($(this).children().attr("href")) >= 0) {
                 $(this).addClass("active");
-            }else if($(this).children().attr("href")=="index.html"&&window.location.pathname=="/"){
+            } else if ($(this).children().attr("href") == "index.html" && window.location.pathname == "/") {
                 $(this).addClass("active");
             }
         }
@@ -27,9 +27,6 @@
         <li class="nav-item">
             <a class="nav-link" href="vex.html">VEX</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>
         <li class="nav-item dropdown" id="membersDropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                 data-toggle="dropdown">
@@ -45,6 +42,9 @@
                 <p class="mb-0">Mentors</p>
                 <a class="dropdown-item" href="Member-Yiti.html">Yiti</a>
             </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>

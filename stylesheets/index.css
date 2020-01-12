@@ -47,9 +47,20 @@ body {
   .page-header.member {
     background-image: url("/img/members_background.jpg"), url("/img/members_background_1080.jpg");
   }
+  .page-header.team {
+    background-image: url("/img/backstretch_full.jpg"), url("/img/backstretch_1080.jpg"), url("/img/backstretch_405.jpg") !important;
+  }
   #backstretch {
     background-image: url("/img/backstretch_full.jpg"), url("/img/backstretch_1080.jpg"), url("/img/backstretch_405.jpg") !important;
   }
+}
+
+.page-header.gallery {
+  background-image: url("/img/gallery_background.jpg");
+}
+
+.page-header.team {
+  background-image: url("/img/backstretch_1080.jpg"), url("/img/backstretch_405.jpg");
 }
 
 #backstretch {
