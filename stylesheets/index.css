@@ -88,14 +88,14 @@ body {
   cursor: pointer;
 }
 
-@keyframes hovering{
-  0%{
+@keyframes hovering {
+  0% {
     top: 100%;
   }
-  50%{
+  50% {
     top: 98%;
   }
-  100%{
+  100% {
     top: 100%;
   }
 }
@@ -115,13 +115,17 @@ nav {
 }
 
 .small-images img {
-  margin: 20% 0;
+  margin: 15% 0;
   width: 50%;
   max-width: 50vw;
   position: relative;
   left: 50%;
   /* top: 50%; */
   transform: translate(-50%);
+}
+
+.small-images .card-body {
+  padding: 0px 5px 5px 5px;
 }
 
 .lozad:not(.loaded) {
@@ -211,6 +215,7 @@ nav {
 }
 
 .jumbotron .btn {
+  margin-right: 0.5em;
   margin-bottom: 0.25em;
   font-size: 150%;
 }
@@ -240,7 +245,7 @@ nav {
 }
 
 h1 .btn {
-  font-size: 2rem !important;
+  font-size: 2rem;
 }
 
 h3.sub-title {
@@ -250,14 +255,12 @@ h3.sub-title {
   font-weight: 600;
 }
 
-
 h1.sub-title {
   margin-top: 0rem;
   margin-bottom: 2rem;
   font-size: 4rem;
   font-weight: 600;
 }
-
 
 .card-title {
   font-weight: 600;
@@ -305,10 +308,35 @@ h1.sub-title {
 
 @media only screen and (max-width: 60rem) {
   #backstretch h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+  }
+  h1 .btn {
+    font-size: 1.5rem;
   }
   .page-header h1 {
     font-size: 3rem;
+  }
+  h1.sub-title {
+    font-size: 2rem;
+  }
+  h1.sub-title {
+    font-size: 2rem;
+  }
+  h1.display-4 {
+    font-size: 2rem;
+  }
+  .jumbotron p.lead{
+    font-size: 1.1rem;
+  }
+  .jumbotron p{
+    font-size: 0.9rem;
+  }
+  .footer h6{
+    font-size: 1rem;
+  }
+  div.youtubeEmbedContainer.row{
+    margin-bottom: 5rem;
+    margin-top: 1rem;
   }
 }
 
@@ -450,10 +478,10 @@ h1.sub-title {
   padding: 0;
 }
 
-.youtubeEmbedContainer.row{
+.youtubeEmbedContainer.row {
   position: relative;
   left: 0%;
-  transform: translate(0,0);
+  transform: translate(0, 0);
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
@@ -461,8 +489,7 @@ h1.sub-title {
   overflow: hidden;
 }
 
-
-.youtubeEmbedContainer.row.enlarged{
+.youtubeEmbedContainer.row.enlarged {
   position: relative;
   left: 50%;
   /* transform: translate(-50%,0); */
@@ -471,7 +498,7 @@ h1.sub-title {
   z-index: 100000;
 }
 
-.youtubeEmbed{
+.youtubeEmbed {
   position: absolute;
   top: 0;
   left: 0;

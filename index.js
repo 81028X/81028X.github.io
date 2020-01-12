@@ -109,8 +109,8 @@ $('body')
   .on('click', '.dropdown-menu a', toggleDropdown);
 
 var youtubeEmbedMouseOver, youtubeEmbedStage = 0, youtubeEmbedScaleFactor, youtubeEmbedMouseOverCounter = 0;
-$(".youtubeEmbed").on('mouseenter mouseleave', function (e) {
-  // console.log(youtubeEmbedStage)
+$(".youtubeEmbed").on('mouseenter mouseleave scroll', function (e) {
+  console.log(youtubeEmbedStage)
   if (e.type === 'mouseenter') {
     youtubeEmbedMouseOver = true;
     if ($(70).toPx().substring(0, ($(70).toPx().length - 2)) > window.innerWidth || window.innerWidth * 0.5625 <= window.innerHeight) return;//only zooms in on 70em+
