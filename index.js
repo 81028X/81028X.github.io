@@ -108,7 +108,7 @@ $('body')
   .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
   .on('click', '.dropdown-menu a', toggleDropdown);
 
-var youtubeEmbedMouseOver, youtubeEmbedStage = 0, youtubeEmbedScaleFactor, youtubeEmbedMouseOverCounter = 0;
+var youtubeEmbedMouseOver, youtubeEmbedStage = 0, youtubeEmbedScaleFactor, youtubeEmbedMouseOverCounter = 0, youtubeEmbedMouseLeaveCounter = 0;
 $(".youtubeEmbed").on('mouseenter mouseleave scroll', function (e) {
   console.log(youtubeEmbedStage)
   if (e.type === 'mouseenter') {
@@ -141,7 +141,10 @@ $(".youtubeEmbed").on('mouseenter mouseleave scroll', function (e) {
     }
   } else {
     youtubeEmbedMouseOver = false;
+    youtubeEmbedMouseLeaveCounter++;
     setTimeout(function () {
+      youtubeEmbedMouseLeaveCounter--;
+      if(youtubeEmbedMouseLeaveCounter!=0)return;
       if (!youtubeEmbedMouseOver && youtubeEmbedStage > 0) {
         if (youtubeEmbedStage == 1) {
           youtubeEmbedStage = -1;
@@ -167,7 +170,7 @@ $(".youtubeEmbed").on('mouseenter mouseleave scroll', function (e) {
           }, 302)
         }
       }
-    }, 100);
+    }, 300);
   }
   // console.log(youtubeEmbedStage)
 })
