@@ -43,7 +43,7 @@ body {
   background-image: url("/img/members_background_1080.jpg");
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1930px) {
   .page-header.member {
     background-image: url("/img/members_background.jpg"), url("/img/members_background_1080.jpg");
   }
