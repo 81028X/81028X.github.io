@@ -195,9 +195,6 @@ nav {
 }
 
 @media (max-width: 767px) {
-  .teamMemberImage {
-    height: 50vh;
-  }
   .teamMemberDesc.row {
     margin-right: 0;
     margin-left: 0;
@@ -213,6 +210,10 @@ nav {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.teamMemberImage img{
+  width: 100%;
 }
 
 .teamMemberDesc .jumbotron {
