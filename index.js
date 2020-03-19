@@ -128,7 +128,7 @@ $(".youtubeEmbed").on('mouseenter mouseleave scroll', function (e) {
             scrollTop: $(".youtubeEmbedContainer.row").offset().top - window.innerHeight * 0.05
           });
           setTimeout(function () {
-            if (youtubeEmbedMouseOver && youtubeEmbedStage==1) {
+            if (youtubeEmbedMouseOver && youtubeEmbedStage == 1) {
               youtubeEmbedStage = 2;
               $(".youtubeEmbedContainer.row").css("transition", "0s");
               $(".youtubeEmbedContainer.row").css("transform", "scale(1) translate(-50%,0)");
@@ -144,7 +144,7 @@ $(".youtubeEmbed").on('mouseenter mouseleave scroll', function (e) {
     youtubeEmbedMouseLeaveCounter++;
     setTimeout(function () {
       youtubeEmbedMouseLeaveCounter--;
-      if(youtubeEmbedMouseLeaveCounter!=0)return;
+      if (youtubeEmbedMouseLeaveCounter != 0) return;
       if (!youtubeEmbedMouseOver && youtubeEmbedStage > 0) {
         if (youtubeEmbedStage == 1) {
           youtubeEmbedStage = -1;
@@ -174,6 +174,19 @@ $(".youtubeEmbed").on('mouseenter mouseleave scroll', function (e) {
   }
   // console.log(youtubeEmbedStage)
 })
+
+function navAddBackground() {
+  $("nav").addClass("bg-light");
+  $("nav").addClass("navbar-light");
+  $("nav").removeClass("navbar-dark");
+}
+
+function navRemoveBackground() {
+  $("nav").removeClass("bg-light");
+  $("nav").addClass("navbar-dark");
+  $("nav").removeClass("navbar-light");
+}
+
 $(document).ready(function () {
   checkBrowser();
 
@@ -181,28 +194,22 @@ $(document).ready(function () {
   $("#nav-placeholder").load("./nav.html");
   $("#footer-placeholder").load("./footer.html");
 
+
   if ($(window).scrollTop() > 50) {
-    $("nav").addClass("bg-light");
-    $("nav").addClass("navbar-light");
-    $("nav").removeClass("navbar-dark");
-  } else {
-    $("nav").removeClass("bg-light");
-    $("nav").addClass("navbar-dark");
-    $("nav").removeClass("navbar-light");
+    navAddBackground();
+  }
+  else {
+    navRemoveBackground();
   }
 
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 50) {
-      $("nav").addClass("bg-light");
-      $("nav").addClass("navbar-light");
-      $("nav").removeClass("navbar-dark");
-    } else {
-      $("nav").removeClass("bg-light");
-      $("nav").addClass("navbar-dark");
-      $("nav").removeClass("navbar-light");
-    }
+    if ($(window).scrollTop() > 50 || !$(".navbar-toggler").hasClass("collapsed"))
+      navAddBackground();
+    else
+      navRemoveBackground();
   });
 });
+
 
 function showMemberList() {
   $("#membersDropdown").addClass("flashing");

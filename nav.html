@@ -13,6 +13,13 @@
         }
     });
     console.log(window.location.pathname)
+    $(".navbar-toggler").addClass("collapsed");
+    $(".navbar-toggler").click(function () {
+        if ($(window).scrollTop() > 50 || $(".navbar-toggler").hasClass("collapsed"))
+            navAddBackground();
+        else
+            navRemoveBackground();
+    });
 </script>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
     <span class="navbar-toggler-icon"></span>
