@@ -126,6 +126,7 @@ nav {
 }
 
 .small-images img {
+  pointer-events: none;
   margin: 15% 0;
   width: 50%;
   max-width: 50vw;
@@ -532,4 +533,8 @@ a.card{
 a.card:hover{
   box-shadow:0em 0.5em 0.5em 0.3em rgba(0, 0, 0, 0.2);
   text-decoration: none;
+}
+
+.noDrag img{
+  pointer-events: none;
 }
