@@ -309,7 +309,20 @@ h1.sub-title {
   display: flex;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  flex-grow: 2;
 }
+
+.card-deck-deck .card-deck.captain{
+  flex-grow: 1;
+}
+
+@media (max-width: 575px) {
+  .card-deck-deck .card-deck.captain{
+    padding: 0% 20% 0% 20%;
+  }
+}
+
+
 
 .card-deck .card {
   -ms-flex: 1 0 0%;
@@ -537,4 +550,8 @@ a.card:hover{
 
 .noDrag img{
   pointer-events: none;
+}
+
+.card-deck-deck.members{
+
 }
