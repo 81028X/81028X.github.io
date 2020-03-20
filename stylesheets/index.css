@@ -149,7 +149,6 @@ nav {
   min-height: 10vh;
 }
 
-
 .lozad {
   transition: 0.5s ease-in-out;
 }
@@ -213,7 +212,7 @@ nav {
   background-repeat: no-repeat;
 }
 
-.teamMemberImage img{
+.teamMemberImage img {
   width: 100%;
 }
 
@@ -300,29 +299,26 @@ h1.sub-title {
 .card-deck-deck .card-deck {
   -ms-flex: 1 0 0%;
   flex: 1 0 0%;
-  flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0%;
-  margin-right: 0px;
-  margin-left: 0px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   flex-grow: 2;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
-.card-deck-deck .card-deck.captain{
+.card-deck-deck .card-deck.captain {
   flex-grow: 1;
 }
 
 @media (max-width: 575px) {
-  .card-deck-deck .card-deck.captain{
+  .card-deck-deck .card-deck.captain {
     padding: 0% 20% 0% 20%;
   }
 }
-
-
 
 .card-deck .card {
   -ms-flex: 1 0 0%;
@@ -356,16 +352,16 @@ h1.sub-title {
   h1.display-4 {
     font-size: 2rem;
   }
-  .jumbotron p.lead{
+  .jumbotron p.lead {
     font-size: 1.1rem;
   }
-  .jumbotron p{
+  .jumbotron p {
     font-size: 0.9rem;
   }
-  .footer h6{
+  .footer h6 {
     font-size: 0.7rem;
   }
-  div.youtubeEmbedContainer.row{
+  div.youtubeEmbedContainer.row {
     margin-bottom: 5rem;
     margin-top: 1rem;
   }
@@ -538,20 +534,98 @@ h1.sub-title {
   transition: 1s;
 }
 
-a.card{
-  box-shadow:0em 0.5em 0.5em 0.25em rgba(0, 0, 0, 0.15);
-  color:#000;
+a.card {
+  box-shadow: 0em 0.5em 0.5em 0.25em rgba(0, 0, 0, 0.15);
+  color: #000;
   transition: .2s;
 }
-a.card:hover{
-  box-shadow:0em 0.5em 0.5em 0.3em rgba(0, 0, 0, 0.2);
+
+a.card:hover {
+  box-shadow: 0em 0.5em 0.5em 0.3em rgba(0, 0, 0, 0.2);
   text-decoration: none;
 }
 
-.noDrag img{
+.noDrag img {
   pointer-events: none;
 }
 
-.card-deck-deck.members{
+.card-deck-deck.members {}
 
+/* Label stuffs */
+
+.labelFolder {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-top: 1em;
+  text-align: center;
+  justify-content: space-evenly;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  align-content: center;
+}
+
+.label {
+  flex-grow: 1;
+  border-radius: 0.25em;
+  vertical-align: bottom;
+  margin: 1em 0.5em;
+  position: relative;
+  padding: 0.75em 2em;
+  box-shadow: 0em 0.3em 0.4em 0.1em hsla(230, 4%, 10%, 0.3);
+  background: #e9ecef;
+  transition: 0.2s;
+}
+
+a.label {
+  text-shadow: none !important;
+}
+
+.label.button {
+  font-size: 150%;
+  margin: 0.3em 0.3em;
+}
+
+.label:hover {
+  transition: 0.2s;
+  box-shadow: 0em 0.3em 0.4em 0.15em hsla(230, 4%, 10%, 0.35);
+}
+
+.label span, .label i {
+  margin-right: 0.25em;
+}
+
+.labelTitle {
+  font-weight: 600;
+  color: #0e0f0f;
+  transition: 0.15s ease-out;
+}
+
+.labelTitle>i {
+  font-size: 150%;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.labelContent {
+  font-weight: 300;
+  color: #23292e;
+  transition: 0.15s ease-out;
+}
+
+
+.label.button::before {
+  content: "";
+}
+
+.label::before {
+  color: rgb(32, 32, 32);
+  content: attr(alt);
+  font-size: 0.75em;
+  left: 0;
+  top: -1.75em;
+  position: absolute;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.2s cubic-bezier(0.21, 0.77, 0.53, 0.92);
 }
