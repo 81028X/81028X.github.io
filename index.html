@@ -56,6 +56,9 @@
 			</div>
 			</br>
 			<button class="btn btn-outline-light" onclick="scrollToID('team-description')">Learn More</button>
+			<button class="btn btn-outline-light" onclick="scrollToID('teamMembers')">Team Members</button>
+			<a class="btn btn-outline-light" href="\vex.html" role="button">What is VRC?</a>
+
 		</h1>
 		<img onclick="scrollToID('team-description')" src="/img/down_arrow.svg" style="width: 1em; height: 1em;" />
 	</div>
@@ -68,30 +71,8 @@
 		</div>
 		<div class="row youtubeEmbedContainer">
 			<iframe width="560" height="315" class="youtubeEmbed"
-				src="https://www.youtube-nocookie.com/embed/2Nl5LK6FEdQ?rel=0&fs=0" frameborder="0"
+				src="https://www.youtube-nocookie.com/embed/2Nl5LK6FEdQ?rel=0" frameborder="0"
 				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-		<div class="jumbotron mt-4">
-			<h1 class="display-4" style="font-weight:bold">Who We Are</h1>
-			<p class="lead">Team 81208X, LeRoi Robotics, is a VRC team established by a couple of high
-				school students
-				from Markham, York Region.</p>
-			<hr class="my-4">
-			<p>The team consists of students from St. Robert Catholic High school,
-				Unionville High School, Markville Secondary School and Pierre Elliott Trudeau High School.
-				</br>The mission of LeRoi
-				Robotic is
-				to promote and further develop skills in science, technology,
-				engineering, art and mathematics (STEAM) as well as computer science and business administration. To
-				spark the magic of STEAM learning through our commitment to leadership, initiative, sharing and
-				returning to the community, the team designs and builds an innovated robot to face the VEX EDR Turning
-				Point challenge.
-				</br></br>
-				As a team of hardworking, dedicated and passionate students, we wish to learn from other more
-				experienced teams and to share our knowledge while giving back to the community.</p>
-			<a class="btn btn-primary" href="\vex.html" role="button">Wait... What's VEX?</a>
-			<button type="button" class="btn btn-primary" onclick="showMemberList()">Learn about our
-				members</button>
 		</div>
 		<div class="row align-center">
 			<h3 class="col sub-title">
@@ -138,9 +119,31 @@
 			</span>
 
 		</div>
+		<div class="jumbotron mt-4">
+			<h1 class="display-4" style="font-weight:bold">Who We Are</h1>
+			<p class="lead">Team 81208X, LeRoi Robotics, is a VRC team established by a couple of high
+				school students
+				from Markham, York Region.</p>
+			<hr class="my-4">
+			<p>The team consists of students from St. Robert Catholic High school,
+				Unionville High School, Markville Secondary School and Pierre Elliott Trudeau High School.
+				</br>The mission of LeRoi
+				Robotic is
+				to promote and further develop skills in science, technology,
+				engineering, art and mathematics (STEAM) as well as computer science and business administration. To
+				spark the magic of STEAM learning through our commitment to leadership, initiative, sharing and
+				returning to the community, the team designs and builds an innovated robot to face the VEX EDR Turning
+				Point challenge.
+				</br></br>
+				As a team of hardworking, dedicated and passionate students, we wish to learn from other more
+				experienced teams and to share our knowledge while giving back to the community.</p>
+			<a class="btn btn-primary" href="\vex.html" role="button">What is VRC?</a>
+			<button type="button" class="btn btn-primary" onclick="scrollToID('teamMembers')">Learn about our
+				members</button>
+		</div>
 
 		<div class="row mt-4 align-center">
-			<h3 class="col sub-title">
+			<h3 class="col sub-title" id="teamMembers">
 				Our Team
 			</h3>
 		</div>
