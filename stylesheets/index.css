@@ -474,8 +474,37 @@ h1.sub-title {
   z-index: 100000;
 }
 
-.blurry.vex {
-  background: url(/img/VRC_field_blurry.jpg);
+.flex-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.vex-game .flex-center a{
+  width: 100%;
+}
+
+
+@media (max-width: 767px) {
+  .vex-game .flex-center a{
+    width: 60%;
+  }
+}
+
+.vex-game{
+  margin-top:2rem;
+  box-shadow: inset 0em 0em 3em 2em rgba(0,0,0,0.42);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.vex-game .blurry {
   margin-top: 2rem;
   background-position: center center;
   background-repeat: no-repeat;
@@ -487,7 +516,7 @@ h1.sub-title {
   color: #fff;
 }
 
-.Firefox .blurry.vex, .Edge .blurry.vex, .Mobile .blurry.vex {
+.Mobile .vex-game .blurry {
   background: hsla(0, 0%, 0%, 0.7);
 }
 
